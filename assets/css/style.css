@@ -96,7 +96,6 @@ header nav ul li{
 main {
     width: 100vw;
     height: 100vh;
-    background: #30475e;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,7 +116,7 @@ main::after{
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(48, 71, 94, .8);
+    background: rgba(48, 71, 94, .9);
     width: 100%;
     height: 100%;
 }
@@ -128,9 +127,12 @@ main h1{
     font-weight: 300;
     color: white;
     text-align: center;
+    margin-bottom: .5rem;
+    animation: grow_up 1s linear .3s 1 backwards ;
 }
 
 main h1 span{
+    margin-top: .4rem;
     display: block;
     background: #f05454;
     color: white;
@@ -138,8 +140,133 @@ main h1 span{
     font-weight: bold;
     letter-spacing: 0;
     margin: 0 auto;
+    width: 15rem;
 }
 
+main p {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+    margin-top: .4rem;
+    color:white;
+    display: inline-block;
+    position: relative;
+    animation: grow_up 1s linear .7s 1 backwards ;
+}
+
+main p::after{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    left: -1px;
+    background-color: #f05454;
+}
+
+/*------------WORK-------------*/
+
+section#work {
+    width: 100vw;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #222831;
+}
+
+section#work .title-container{
+    background: #f05454;
+    width: 15rem;
+    transform: skewX(-18deg)
+}
+
+section#work .title-container h1 {
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transform: skewX(18deg);
+    text-align: center;
+}
+
+section#work .container-project{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    max-height: 25rem;
+    justify-content: center;
+    padding: 0.75rem 1.4rem;
+    overflow: auto;
+}
+
+section#work .container-project .card-project{
+    border: 1px solid white !important;
+    flex-basis: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 1rem 0;
+    height: 20rem;
+    position: relative;
+}
+
+
+section#work .container-project .card-project * {
+    z-index: 2;
+}
+
+
+section#work .container-project .card-project::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .6);
+}
+
+section#work .container-project .card-project p.title{
+    position: absolute;
+    top: 30%;
+    display: block;
+    background: white;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+section#work .container-project .card-project .info{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #222831;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .65rem 1.2rem;
+}
+
+section#work .container-project .card-project .info p{
+    color: #f05454;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+section#work .container-project .card-project .info a{
+    text-transform: uppercase;
+    color: white;
+    transition: all .5s ease-in;
+}
+
+section#work .container-project .card-project .info a:hover{
+    color: #f05454;
+    transition: all .5s ease-in;
+}
 
 /*------------MEDIA QUERY-------------*/
 
@@ -156,6 +283,24 @@ main h1 span{
         margin: 0 1rem;
         font-size: 1.5rem;
     }
+
+    main h1 {
+        font-size: 3.5rem;
+    }
+
+    main h1 span{
+        width: 22rem;
+    }
+
+    main p {
+        font-size: 2.4rem;
+    }
+    section#work .container-project {
+        justify-content: flex-start;
+    }
+    section#work .container-project .card-project{
+        flex-basis: 35%;
+    }
 }
 
 @media only screen and (min-width: 1024px){
@@ -170,4 +315,22 @@ main h1 span{
     header nav ul li{
         font-size: 1.8rem;
     }
+}
+
+
+/*------------ANIMATION-------------*/
+
+@keyframes grow_up {
+    0% {
+        transform: scale(0);
+    }
+
+    50%{
+        transform: scale(1.3);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+
 }
