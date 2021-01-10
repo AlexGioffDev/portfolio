@@ -51,13 +51,12 @@ header {
     font-weight: bold;
 }
 
-.logo-text, header nav ul li{
+header nav ul li{
     display: inline-block;
     position: relative;
 }
 
 
-.logo .logo-text::after,
 header nav ul li::after{
     content: '';
     position: absolute;
@@ -69,7 +68,6 @@ header nav ul li::after{
     transition: all 0.45s ease-in;
 }
 
-.logo .logo-text:hover:after,
 header nav ul li:hover:after{
     width: 99%;
     left: 0;
@@ -268,6 +266,29 @@ section#work .container-project .card-project .info a:hover{
     transition: all .5s ease-in;
 }
 
+/*------------FOOTER-------------*/
+footer {
+    background: #f05454;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .75rem 2rem;
+}
+
+footer h2{
+    width: 50%;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+footer nav ul li{
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    font-weight: 300;
+}
+
 /*------------MEDIA QUERY-------------*/
 
 @media only screen and (min-width:768px) {
@@ -301,6 +322,10 @@ section#work .container-project .card-project .info a:hover{
     section#work .container-project .card-project{
         flex-basis: 35%;
     }
+
+    section#work .title-container h1{
+        font-size: 2.3rem;
+    }
 }
 
 @media only screen and (min-width: 1024px){
@@ -315,6 +340,11 @@ section#work .container-project .card-project .info a:hover{
     header nav ul li{
         font-size: 1.8rem;
     }
+
+    section#work .container-project .card-project{
+        flex-basis: 25%;
+    }
+
 }
 
 
