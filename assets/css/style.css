@@ -31,6 +31,8 @@ body{
 /*------------HEADER-------------*/
 
 header {
+    position: fixed;
+    top: 0;
     background-color: #222831;
     width: 100vw;
     height: 3.5rem;
@@ -39,6 +41,16 @@ header {
     justify-content: space-between;
     align-items: center;
     color: white;
+    z-index: 100;
+    transition: all 1s ease-in;
+}
+
+.active {
+    background: whitesmoke;
+    color: black;
+    padding: 2rem;
+    font-size: 1.5rem;
+    transition: all 1s ease-in;
 }
 
 .logo{
@@ -296,6 +308,10 @@ footer nav ul li{
         padding: 2rem;
     }
 
+    .active{
+        padding: 2.5rem;
+    }
+
     .logo .logo-text{
         font-size: 2.6rem;
     }
@@ -330,7 +346,7 @@ footer nav ul li{
 
 @media only screen and (min-width: 1024px){
     haeder {
-        padding: 2.5rem;
+        padding: 3rem;
     }
 
     .logo .logo-text {
